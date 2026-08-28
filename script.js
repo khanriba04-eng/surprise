@@ -14,6 +14,100 @@ function goToPage3() {
     window.location.href = "page3.html";
 
 }
+/* =========================================
+   GO TO DATE PAGE
+========================================= */
+
+function goToPage4() {
+
+    window.location.href = "page4.html";
+
+}
+/* =========================================
+   DATE PICKER
+========================================= */
+
+const datePicker =
+    document.getElementById("datePicker");
+
+const selectedDate =
+    document.getElementById("selectedDate");
+
+
+if (datePicker) {
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+
+    const month =
+        String(today.getMonth() + 1)
+        .padStart(2, "0");
+
+    const day =
+        String(today.getDate())
+        .padStart(2, "0");
+
+    datePicker.min =
+        `${year}-${month}-${day}`;
+}
+
+
+/* =========================================
+   CHOOSE DATE
+========================================= */
+
+function chooseDate() {
+
+    if (!datePicker || !selectedDate) {
+        return;
+    }
+
+    if (!datePicker.value) {
+
+        selectedDate.innerHTML =
+            "Choose a date first, silly 🥺❤️";
+
+        return;
+    }
+
+
+    const date =
+        new Date(
+            datePicker.value + "T00:00:00"
+        );
+
+
+    const options = {
+
+        weekday: "long",
+
+        day: "numeric",
+
+        month: "long",
+
+        year: "numeric"
+
+    };
+
+
+    const formattedDate =
+        date.toLocaleDateString(
+            "en-IN",
+            options
+        );
+
+
+    selectedDate.innerHTML =
+        `It's a date! 🥰❤️<br>
+         <span>
+         ${formattedDate}
+         </span>`;
+
+
+    heartExplosion();
+
+}
 
 
 function restart() {
