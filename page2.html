@@ -10,17 +10,10 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>A Little Question ❤️</title>
-
-    <!-- Google Fonts -->
+    <title>Would You Go On A Date? ❤️</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
@@ -31,11 +24,9 @@
 
 </head>
 
-
 <body>
 
     <div class="hearts"></div>
-
 
     <main class="container">
 
@@ -43,65 +34,50 @@
             💗
         </div>
 
-
         <p class="tiny-text">
             I have one little question...
         </p>
 
-
         <h1 class="date-question">
-
             Would you like
             <br>
             to go on a date with me?
-
         </h1>
 
-
         <p class="date-message">
-
             Just you, me and a little bit of magic... ✨
-
         </p>
-
 
         <div class="date-buttons">
 
-            <button
+            <!-- YES DIRECTLY OPENS PAGE 3 -->
+            <a
+                href="page3.html"
                 class="yes-button"
                 id="yesButton"
-                onclick="sayYes()"
             >
-
                 YES ❤️
+            </a>
 
-            </button>
-
-
+            <!-- NO STILL RUNS AWAY -->
             <button
                 class="no-button"
                 id="noButton"
                 onclick="runAway()"
             >
-
                 NO 🙈
-
             </button>
 
         </div>
-
 
         <p
             class="date-hint"
             id="dateHint"
         >
-
             Be honest... 👀❤️
-
         </p>
 
     </main>
-
 
     <script src="script.js"></script>
 
