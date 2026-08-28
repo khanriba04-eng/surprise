@@ -1,163 +1,784 @@
+/* =========================================
+   RESET
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* =========================================
+   BODY
+========================================= */
+
 body {
     min-height: 100vh;
-    background: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ffffff 0%,
+            #fff7f8 50%,
+            #ffe9ed 100%
+        );
+
     color: #d90429;
+
     font-family: "Poppins", sans-serif;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     overflow: hidden;
+
     position: relative;
 }
 
-/* Main content */
 
-.container {
-    text-align: center;
-    z-index: 10;
-    padding: 30px;
-}
+/* =========================================
+   SOFT BACKGROUND GLOW
+========================================= */
 
-.container h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
+body::before {
+    content: "";
 
-.container p {
-    font-size: 1.2rem;
-    margin-bottom: 35px;
-    color: #555;
-}
-
-/* Buttons */
-
-button {
-    background: #d90429;
-    color: white;
-    border: none;
-    padding: 16px 35px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(217, 4, 41, 0.3);
-    transition: 0.3s ease;
-}
-
-button:hover {
-    transform: scale(1.08);
-    background: #ef233c;
-    box-shadow: 0 10px 25px rgba(217, 4, 41, 0.4);
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Floating hearts */
-
-.heart {
     position: absolute;
-    bottom: -50px;
-    color: #d90429;
-    font-size: 25px;
-    animation: floatUp linear forwards;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 0, 60, 0.08);
+
+    filter: blur(80px);
+
+    animation: softGlow 5s ease-in-out infinite;
+
     pointer-events: none;
-    z-index: 1;
 }
 
-@keyframes floatUp {
+@keyframes softGlow {
+
     0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Final page */
-
-.final-page {
-    background: #fff;
-}
-
-.final-container {
-    text-align: center;
-    z-index: 10;
-    animation: appear 1.5s ease;
-}
-
-.final-container h1 {
-    font-size: 4rem;
-    color: #d90429;
-    text-shadow: 0 5px 20px rgba(217, 4, 41, 0.2);
-}
-
-.final-container p {
-    margin-top: 20px;
-    font-size: 1.4rem;
-    color: #555;
-}
-
-.big-heart {
-    font-size: 100px;
-    animation: heartbeat 1s infinite;
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
+        transform: scale(0.8);
+        opacity: 0.5;
     }
 
     50% {
         transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
     }
 }
 
-@keyframes appear {
-    from {
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    text-align: center;
+
+    z-index: 10;
+
+    padding: 30px;
+
+    width: 90%;
+
+    max-width: 750px;
+
+    animation: pageAppear 1.2s ease;
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+.container h1 {
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: #b00020;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 5px 20px rgba(217, 4, 41, 0.15);
+}
+
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.container p {
+
+    font-size: 17px;
+
+    color: #684f54;
+
+    margin-bottom: 30px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   SMALL TEXT
+========================================= */
+
+.tiny-text {
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 11px !important;
+
+    color: #a78388 !important;
+
+    margin-bottom: 15px !important;
+}
+
+
+/* =========================================
+   MAIN BUTTON
+========================================= */
+
+button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #d90429,
+            #b00020
+        );
+
+    color: white;
+
+    border: none;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(217, 4, 41, 0.28);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+button:hover {
+
+    transform: scale(1.08) translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef233c,
+            #d90429
+        );
+
+    box-shadow:
+        0 15px 35px rgba(217, 4, 41, 0.35);
+}
+
+
+button:active {
+
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   BUTTON HINT
+========================================= */
+
+.hint {
+
+    margin-top: 18px !important;
+
+    font-size: 11px !important;
+
+    color: #aa8b90 !important;
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.heart {
+
+    position: absolute;
+
+    bottom: -60px;
+
+    color: #d90429;
+
+    font-size: 25px;
+
+    animation:
+        floatUp linear forwards;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    user-select: none;
+}
+
+
+@keyframes floatUp {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.7);
+
         opacity: 0;
-        transform: scale(0.5);
+    }
+
+    10% {
+
+        opacity: 0.8;
+    }
+
+    50% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-115vh)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   DATE QUESTION PAGE
+========================================= */
+
+.date-heart {
+
+    font-size: 75px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.2s infinite;
+
+    display: inline-block;
+}
+
+
+.date-question {
+
+    font-family: "Dancing Script", cursive !important;
+
+    font-size: clamp(45px, 7vw, 75px) !important;
+
+    line-height: 1.05;
+
+    margin-bottom: 18px !important;
+}
+
+
+.date-message {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px !important;
+
+    color: #765b60 !important;
+
+    margin-bottom: 35px !important;
+}
+
+
+/* =========================================
+   YES / NO AREA
+========================================= */
+
+.date-buttons {
+
+    position: relative;
+
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    z-index: 20;
+}
+
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+.yes-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #d90429,
+            #b00020
+        );
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   NO BUTTON
+========================================= */
+
+.no-button {
+
+    background: white;
+
+    color: #b00020;
+
+    border: 2px solid #d90429;
+
+    box-shadow:
+        0 5px 15px rgba(217, 4, 41, 0.15);
+
+    position: relative;
+
+    z-index: 10;
+
+    transition:
+        left 0.25s ease,
+        top 0.25s ease,
+        transform 0.3s ease;
+}
+
+
+.no-button:hover {
+
+    background: #fff;
+
+    color: #d90429;
+}
+
+
+/* =========================================
+   DATE MESSAGE
+========================================= */
+
+.date-hint {
+
+    margin-top: 25px !important;
+
+    font-size: 12px !important;
+
+    color: #a78388 !important;
+}
+
+
+/* =========================================
+   FINAL PAGE
+========================================= */
+
+.final-page {
+
+    width: 100%;
+
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ffffff 0%,
+            #fff4f6 45%,
+            #ffdfe5 100%
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   FINAL GLOW
+========================================= */
+
+.final-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 0, 50, 0.10);
+
+    filter: blur(100px);
+
+    animation:
+        finalGlow 4s infinite alternate;
+}
+
+
+@keyframes finalGlow {
+
+    from {
+        transform: scale(0.8);
     }
 
     to {
-        opacity: 1;
-        transform: scale(1);
+        transform: scale(1.2);
     }
 }
 
-/* Mobile */
+
+/* =========================================
+   FINAL CONTENT
+========================================= */
+
+.final-container {
+
+    text-align: center;
+
+    z-index: 10;
+
+    width: 90%;
+
+    max-width: 900px;
+
+    animation:
+        finalAppear 1.5s ease;
+}
+
+
+@keyframes finalAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.5)
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   GIANT HEART
+========================================= */
+
+.big-heart {
+
+    font-size: clamp(100px, 16vw, 190px);
+
+    display: inline-block;
+
+    animation:
+        giantHeartbeat 1.2s infinite;
+
+    filter:
+        drop-shadow(
+            0 10px 25px
+            rgba(176, 0, 32, 0.25)
+        );
+
+    margin-bottom: 10px;
+}
+
+
+@keyframes giantHeartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================================
+   FINAL HEADING
+========================================= */
+
+.final-container h1 {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(55px, 9vw, 110px);
+
+    line-height: 0.9;
+
+    font-weight: 700;
+
+    color: #b00020;
+
+    text-shadow:
+        0 8px 25px
+        rgba(176, 0, 32, 0.20);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   FINAL PARAGRAPH
+========================================= */
+
+.final-container p {
+
+    font-family: "Dancing Script", cursive;
+
+    margin-top: 15px;
+
+    font-size: 28px;
+
+    color: #704f55;
+}
+
+
+/* =========================================
+   HEART LINE
+========================================= */
+
+.heart-line {
+
+    color: #d90429;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    margin: 20px 0;
+}
+
+
+/* =========================================
+   MINI HEARTS
+========================================= */
+
+.mini-hearts {
+
+    font-size: 25px;
+
+    letter-spacing: 5px;
+
+    margin-top: 20px;
+
+    animation:
+        miniFloat 2s ease-in-out infinite;
+}
+
+
+@keyframes miniFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================
+   REPLAY BUTTON
+========================================= */
+
+.replay-button {
+
+    margin-top: 25px;
+
+    padding: 11px 25px;
+
+    background: transparent;
+
+    border: 1px solid #d90429;
+
+    color: #b00020;
+
+    font-size: 13px;
+}
+
+
+.replay-button:hover {
+
+    background: #d90429;
+
+    color: white;
+}
+
+
+/* =========================================
+   PAGE ANIMATION
+========================================= */
+
+@keyframes pageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
 
+    .container {
+
+        padding: 20px;
+    }
+
+
     .container h1 {
-        font-size: 2.2rem;
+
+        font-size: 55px;
     }
 
-    .final-container h1 {
-        font-size: 2.5rem;
+
+    .container p {
+
+        font-size: 15px;
     }
 
-    .buttons {
-        gap: 10px;
+
+    .date-question {
+
+        font-size: 48px !important;
     }
+
+
+    .date-buttons {
+
+        gap: 12px;
+    }
+
 
     button {
+
         padding: 14px 25px;
-        font-size: 1rem;
+
+        font-size: 14px;
     }
+
+
+    .final-container h1 {
+
+        font-size: 58px;
+    }
+
+
+    .final-container p {
+
+        font-size: 23px;
+    }
+
+
+    .heart-line {
+
+        font-size: 13px;
+    }
+
 }
