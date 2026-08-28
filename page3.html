@@ -1,24 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You ❤️</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Our Date ❤️</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body class="final-page">
 
+    <!-- Floating Hearts -->
+
     <div class="hearts"></div>
 
-    <div class="final-container">
-        <div class="big-heart">❤️</div>
-        <h1> Yeahhhh!!!</h1>
-        <h2>I LOVE YOU A LOT</h2>
 
-        <p>More than words could ever explain ❤️</p>
-    </div>
+    <!-- Final Page -->
+
+    <main class="final-container">
+
+        <!-- Big Heart -->
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+
+        <!-- Main Message -->
+
+        <p class="tiny-text">
+            I have something to tell you...
+        </p>
+
+
+        <h1>
+            I LOVE YOU A LOT
+        </h1>
+
+
+        <p class="final-message">
+            More than words could ever explain ❤️
+        </p>
+
+
+        <div class="heart-line">
+            ─────── ♥ ───────
+        </div>
+
+
+        <!-- Date Section -->
+
+        <div class="date-card">
+
+            <div class="calendar-heart">
+                💌
+            </div>
+
+
+            <h2>
+                So... when should we go on our date?
+            </h2>
+
+
+            <p class="date-subtitle">
+                Pick a day for just the two of us 🥰
+            </p>
+
+
+            <!-- Date Picker -->
+
+            <div class="date-picker-wrapper">
+
+                <label for="datePicker">
+                    📅 Choose our date
+                </label>
+
+                <input
+                    type="date"
+                    id="datePicker"
+                >
+
+            </div>
+
+
+            <!-- Confirm Button -->
+
+            <button
+                type="button"
+                id="dateButton"
+                class="date-button"
+                onclick="chooseDate()"
+            >
+                This Date Looks Perfect! 💖
+            </button>
+
+
+            <!-- Selected Date Message -->
+
+            <p
+                id="selectedDate"
+                class="selected-date"
+            ></p>
+
+        </div>
+
+
+        <!-- Bottom Hearts -->
+
+        <div class="mini-hearts">
+            ❤️ 💕 💗 💖 💕 ❤️
+        </div>
+
+    </main>
+
 
     <script src="script.js"></script>
+
 </body>
+
 </html>
