@@ -1161,3 +1161,321 @@ button:active {
     }
 
 }
+/* =========================================
+   DATE PAGE
+========================================= */
+
+.date-page {
+
+    min-height: 100vh;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ffffff 0%,
+            #fff5f7 50%,
+            #ffe4e9 100%
+        );
+}
+
+
+.date-page-container {
+
+    width: 95%;
+
+    max-width: 650px;
+
+    text-align: center;
+
+    z-index: 10;
+
+    padding: 30px 20px;
+
+    animation:
+        pageAppear 1s ease;
+}
+
+
+.calendar-icon {
+
+    font-size: 70px;
+
+    margin-bottom: 10px;
+
+    animation:
+        heartbeat 1.3s infinite;
+}
+
+
+.date-page-container h1 {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(45px, 7vw, 70px);
+
+    color: #b00020;
+
+    margin-bottom: 10px;
+}
+
+
+.date-intro {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 24px;
+
+    color: #765b60;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   DATE CARD
+========================================= */
+
+.date-card {
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border:
+        2px solid
+        rgba(217, 4, 41, 0.12);
+
+    border-radius: 30px;
+
+    padding: 30px 25px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(217, 4, 41, 0.15);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+.calendar-heart {
+
+    font-size: 45px;
+
+    margin-bottom: 5px;
+}
+
+
+.date-card h2 {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 35px;
+
+    color: #b00020;
+
+    margin-bottom: 5px;
+}
+
+
+.date-card p {
+
+    color: #765b60;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   DATE LABEL
+========================================= */
+
+.date-card label {
+
+    display: block;
+
+    color: #b00020;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   DATE INPUT
+========================================= */
+
+#datePicker {
+
+    width: min(100%, 300px);
+
+    padding: 15px;
+
+    border:
+        2px solid #f0b1bb;
+
+    border-radius: 15px;
+
+    background: white;
+
+    color: #6b2737;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    outline: none;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+
+    transition:
+        0.3s ease;
+}
+
+
+#datePicker:hover {
+
+    border-color: #d90429;
+}
+
+
+#datePicker:focus {
+
+    border-color: #d90429;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(217, 4, 41, 0.1);
+}
+
+
+/* =========================================
+   SELECTED DATE
+========================================= */
+
+.selected-date {
+
+    margin-top: 20px;
+
+    min-height: 35px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    color: #b00020;
+
+    line-height: 1.4;
+
+    animation:
+        dateMessageAppear 0.6s ease;
+}
+
+
+.bottom-message {
+
+    margin-top: 25px;
+
+    color: #9b777d;
+
+    font-size: 12px;
+}
+
+
+@keyframes dateMessageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.8);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   MOBILE DATE PAGE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .date-page-container {
+
+        padding:
+            20px 10px;
+    }
+
+
+    .calendar-icon {
+
+        font-size: 55px;
+    }
+
+
+    .date-page-container h1 {
+
+        font-size: 50px;
+    }
+
+
+    .date-intro {
+
+        font-size: 20px;
+    }
+
+
+    .date-card {
+
+        padding:
+            25px 15px;
+    }
+
+
+    .date-card h2 {
+
+        font-size: 30px;
+    }
+
+
+    #datePicker {
+
+        width: 90%;
+
+        font-size: 14px;
+    }
+
+}
