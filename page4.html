@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Plan Our Date ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="date-page">
+
+    <div class="hearts"></div>
+
+    <main class="date-page-container">
+
+        <div class="calendar-icon">
+            💌
+        </div>
+
+        <p class="tiny-text">
+            Now comes the important part...
+        </p>
+
+        <h1>
+            Let's Plan Our Date
+        </h1>
+
+        <p class="date-intro">
+            Pick a day when I get to steal you away for a little while 🥰
+        </p>
+
+
+        <div class="date-card">
+
+            <div class="calendar-heart">
+                📅
+            </div>
+
+            <h2>
+                When are you free?
+            </h2>
+
+            <p>
+                Choose a date for our little adventure ❤️
+            </p>
+
+            <label for="datePicker">
+                Our Date
+            </label>
+
+            <input
+                type="date"
+                id="datePicker"
+            >
+
+            <button
+                type="button"
+                class="date-button"
+                onclick="chooseDate()"
+            >
+                Yes, That's The Day! 💖
+            </button>
+
+            <div
+                id="selectedDate"
+                class="selected-date"
+            ></div>
+
+        </div>
+
+
+        <p class="bottom-message">
+            No matter what day you choose,
+            I'll be looking forward to it ❤️
+        </p>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
