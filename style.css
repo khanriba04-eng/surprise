@@ -29,7 +29,6 @@ body {
     font-family: "Poppins", sans-serif;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
@@ -61,6 +60,7 @@ body::before {
 
     pointer-events: none;
 }
+
 
 @keyframes softGlow {
 
@@ -158,7 +158,7 @@ body::before {
 
 
 /* =========================================
-   MAIN BUTTON
+   NORMAL BUTTON
 ========================================= */
 
 button {
@@ -213,6 +213,71 @@ button:hover {
 
 
 button:active {
+
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   FIRST PAGE BUTTON
+========================================= */
+
+.main-button {
+
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d90429,
+            #b00020
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(217, 4, 41, 0.28);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.main-button:hover {
+
+    transform:
+        scale(1.08)
+        translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef233c,
+            #d90429
+        );
+
+    box-shadow:
+        0 15px 35px rgba(217, 4, 41, 0.4);
+}
+
+
+.main-button:active {
 
     transform: scale(0.95);
 }
@@ -301,7 +366,8 @@ button:active {
 
     margin-bottom: 15px;
 
-    animation: heartbeat 1.2s infinite;
+    animation:
+        heartbeat 1.2s infinite;
 
     display: inline-block;
 }
@@ -309,9 +375,12 @@ button:active {
 
 .date-question {
 
-    font-family: "Dancing Script", cursive !important;
+    font-family:
+        "Dancing Script",
+        cursive !important;
 
-    font-size: clamp(45px, 7vw, 75px) !important;
+    font-size:
+        clamp(45px, 7vw, 75px) !important;
 
     line-height: 1.05;
 
@@ -321,13 +390,18 @@ button:active {
 
 .date-message {
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 
-    font-size: 16px !important;
+    font-size:
+        16px !important;
 
-    color: #765b60 !important;
+    color:
+        #765b60 !important;
 
-    margin-bottom: 35px !important;
+    margin-bottom:
+        35px !important;
 }
 
 
@@ -359,6 +433,10 @@ button:active {
 
 .yes-button {
 
+    display: inline-block;
+
+    text-decoration: none;
+
     background:
         linear-gradient(
             135deg,
@@ -366,13 +444,49 @@ button:active {
             #b00020
         );
 
+    color: white;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(217, 4, 41, 0.28);
+
     transition:
         transform 0.4s ease,
-        box-shadow 0.4s ease;
+        box-shadow 0.4s ease,
+        background 0.3s ease;
 
     position: relative;
 
     z-index: 5;
+}
+
+
+.yes-button:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef233c,
+            #d90429
+        );
+
+    box-shadow:
+        0 15px 40px
+        rgba(217, 4, 41, 0.45);
 }
 
 
@@ -389,7 +503,8 @@ button:active {
     border: 2px solid #d90429;
 
     box-shadow:
-        0 5px 15px rgba(217, 4, 41, 0.15);
+        0 5px 15px
+        rgba(217, 4, 41, 0.15);
 
     position: relative;
 
@@ -483,10 +598,12 @@ button:active {
 @keyframes finalGlow {
 
     from {
+
         transform: scale(0.8);
     }
 
     to {
+
         transform: scale(1.2);
     }
 }
@@ -539,7 +656,8 @@ button:active {
 
 .big-heart {
 
-    font-size: clamp(100px, 16vw, 190px);
+    font-size:
+        clamp(100px, 16vw, 190px);
 
     display: inline-block;
 
@@ -560,18 +678,22 @@ button:active {
 
     0%,
     100% {
+
         transform: scale(1);
     }
 
     25% {
+
         transform: scale(1.15);
     }
 
     40% {
+
         transform: scale(1);
     }
 
     60% {
+
         transform: scale(1.12);
     }
 }
@@ -590,17 +712,21 @@ button:active {
     font-size:
         clamp(55px, 9vw, 110px);
 
-    line-height: 0.9;
+    line-height:
+        0.9;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    color: #b00020;
+    color:
+        #b00020;
 
     text-shadow:
         0 8px 25px
         rgba(176, 0, 32, 0.20);
 
-    margin-bottom: 25px;
+    margin-bottom:
+        25px;
 }
 
 
@@ -610,13 +736,18 @@ button:active {
 
 .final-container p {
 
-    font-family: "Dancing Script", cursive;
+    font-family:
+        "Dancing Script",
+        cursive;
 
-    margin-top: 15px;
+    margin-top:
+        15px;
 
-    font-size: 28px;
+    font-size:
+        28px;
 
-    color: #704f55;
+    color:
+        #704f55;
 }
 
 
@@ -626,13 +757,17 @@ button:active {
 
 .heart-line {
 
-    color: #d90429;
+    color:
+        #d90429;
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
-    margin: 20px 0;
+    margin:
+        20px 0;
 }
 
 
@@ -642,11 +777,14 @@ button:active {
 
 .mini-hearts {
 
-    font-size: 25px;
+    font-size:
+        25px;
 
-    letter-spacing: 5px;
+    letter-spacing:
+        5px;
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 
     animation:
         miniFloat 2s ease-in-out infinite;
@@ -657,11 +795,15 @@ button:active {
 
     0%,
     100% {
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-8px);
+
+        transform:
+            translateY(-8px);
     }
 }
 
@@ -672,25 +814,33 @@ button:active {
 
 .replay-button {
 
-    margin-top: 25px;
+    margin-top:
+        25px;
 
-    padding: 11px 25px;
+    padding:
+        11px 25px;
 
-    background: transparent;
+    background:
+        transparent;
 
-    border: 1px solid #d90429;
+    border:
+        1px solid #d90429;
 
-    color: #b00020;
+    color:
+        #b00020;
 
-    font-size: 13px;
+    font-size:
+        13px;
 }
 
 
 .replay-button:hover {
 
-    background: #d90429;
+    background:
+        #d90429;
 
-    color: white;
+    color:
+        white;
 }
 
 
@@ -728,100 +878,87 @@ button:active {
 
     .container {
 
-        padding: 20px;
+        padding:
+            20px;
     }
 
 
     .container h1 {
 
-        font-size: 55px;
+        font-size:
+            55px;
     }
 
 
     .container p {
 
-        font-size: 15px;
+        font-size:
+            15px;
     }
 
 
     .date-question {
 
-        font-size: 48px !important;
+        font-size:
+            48px !important;
     }
 
 
     .date-buttons {
 
-        gap: 12px;
+        gap:
+            12px;
     }
 
 
     button {
 
-        padding: 14px 25px;
+        padding:
+            14px 25px;
 
-        font-size: 14px;
+        font-size:
+            14px;
+    }
+
+
+    .main-button {
+
+        padding:
+            14px 28px;
+
+        font-size:
+            14px;
+    }
+
+
+    .yes-button {
+
+        padding:
+            14px 28px;
+
+        font-size:
+            14px;
     }
 
 
     .final-container h1 {
 
-        font-size: 58px;
+        font-size:
+            58px;
     }
 
 
     .final-container p {
 
-        font-size: 23px;
+        font-size:
+            23px;
     }
 
 
     .heart-line {
 
-        font-size: 13px;
+        font-size:
+            13px;
     }
 
-}
-/* =========================================
-   LINK BUTTON
-========================================= */
-
-.main-button {
-    display: inline-block;
-
-    background: linear-gradient(
-        135deg,
-        #d90429,
-        #b00020
-    );
-
-    color: white;
-
-    text-decoration: none;
-
-    padding: 16px 35px;
-
-    border-radius: 50px;
-
-    font-family: "Poppins", sans-serif;
-
-    font-size: 16px;
-
-    font-weight: 500;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 10px 25px rgba(217, 4, 41, 0.28);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.main-button:hover {
-    transform: scale(1.08) translateY(-3px);
-
-    box-shadow:
-        0 15px 35px rgba(217, 4, 41, 0.35);
 }
