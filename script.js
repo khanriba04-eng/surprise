@@ -3,53 +3,43 @@
 ========================================= */
 
 function goToPage2() {
-
     window.location.href = "page2.html";
-
 }
-
 
 function goToPage3() {
-
     window.location.href = "page3.html";
-
 }
-/* =========================================
-   GO TO DATE PAGE
-========================================= */
 
 function goToPage4() {
-
     window.location.href = "page4.html";
-
 }
+
+function restart() {
+    window.location.href = "index.html";
+}
+
+
 /* =========================================
    DATE PICKER
 ========================================= */
 
-const datePicker =
-    document.getElementById("datePicker");
-
-const selectedDate =
-    document.getElementById("selectedDate");
-
+const datePicker = document.getElementById("datePicker");
+const selectedDate = document.getElementById("selectedDate");
 
 if (datePicker) {
-
     const today = new Date();
 
     const year = today.getFullYear();
 
-    const month =
-        String(today.getMonth() + 1)
-        .padStart(2, "0");
+    const month = String(
+        today.getMonth() + 1
+    ).padStart(2, "0");
 
-    const day =
-        String(today.getDate())
-        .padStart(2, "0");
+    const day = String(
+        today.getDate()
+    ).padStart(2, "0");
 
-    datePicker.min =
-        `${year}-${month}-${day}`;
+    datePicker.min = `${year}-${month}-${day}`;
 }
 
 
@@ -63,33 +53,33 @@ function chooseDate() {
         return;
     }
 
-    if (!datePicker.value) {
+    const selected = datePicker.value;
 
-        selectedDate.innerHTML =
+    if (!selected) {
+
+        selectedDate.textContent =
             "Choose a date first, silly 🥺❤️";
+
+        selectedDate.style.animation = "none";
+
+        setTimeout(() => {
+            selectedDate.style.animation =
+                "dateMessageAppear 0.6s ease";
+        }, 10);
 
         return;
     }
 
-
-    const date =
-        new Date(
-            datePicker.value + "T00:00:00"
-        );
-
+    const date = new Date(
+        selected + "T00:00:00"
+    );
 
     const options = {
-
         weekday: "long",
-
-        day: "numeric",
-
+        year: "numeric",
         month: "long",
-
-        year: "numeric"
-
+        day: "numeric"
     };
-
 
     const formattedDate =
         date.toLocaleDateString(
@@ -97,23 +87,20 @@ function chooseDate() {
             options
         );
 
-
     selectedDate.innerHTML =
         `It's a date! 🥰❤️<br>
-         <span>
-         ${formattedDate}
-         </span>`;
+        <span style="font-size: 18px;">
+            ${formattedDate}
+        </span>`;
 
+    selectedDate.style.animation = "none";
+
+    setTimeout(() => {
+        selectedDate.style.animation =
+            "dateMessageAppear 0.6s ease";
+    }, 10);
 
     heartExplosion();
-
-}
-
-
-function restart() {
-
-    window.location.href = "index.html";
-
 }
 
 
@@ -124,9 +111,7 @@ function restart() {
 const heartContainer =
     document.querySelector(".hearts");
 
-
 const heartSymbols = [
-
     "❤️",
     "💕",
     "💗",
@@ -136,25 +121,18 @@ const heartSymbols = [
     "💝",
     "♡",
     "♥"
-
 ];
-
 
 function createHeart() {
 
     if (!heartContainer) {
-
         return;
-
     }
-
 
     const heart =
         document.createElement("div");
 
-
     heart.classList.add("heart");
-
 
     const randomHeart =
         heartSymbols[
@@ -164,46 +142,31 @@ function createHeart() {
             )
         ];
 
-
-    heart.innerHTML =
-        randomHeart;
-
+    heart.innerHTML = randomHeart;
 
     heart.style.left =
         Math.random() * 100 + "vw";
 
-
     const size =
         Math.random() * 25 + 15;
-
 
     heart.style.fontSize =
         size + "px";
 
-
     const duration =
         Math.random() * 5 + 5;
-
 
     heart.style.animationDuration =
         duration + "s";
 
-
     heart.style.animationDelay =
         Math.random() * 1.5 + "s";
 
-
-    heartContainer.appendChild(
-        heart
-    );
-
+    heartContainer.appendChild(heart);
 
     setTimeout(() => {
-
         heart.remove();
-
     }, (duration + 2) * 1000);
-
 }
 
 
@@ -222,25 +185,15 @@ setInterval(
 ========================================= */
 
 const yesButton =
-    document.getElementById(
-        "yesButton"
-    );
-
+    document.getElementById("yesButton");
 
 const noButton =
-    document.getElementById(
-        "noButton"
-    );
-
+    document.getElementById("noButton");
 
 const dateHint =
-    document.getElementById(
-        "dateHint"
-    );
-
+    document.getElementById("dateHint");
 
 let yesScale = 1;
-
 let noAttempts = 0;
 
 
@@ -250,37 +203,24 @@ let noAttempts = 0;
 
 function runAway() {
 
-    if (
-        !noButton ||
-        !yesButton
-    ) {
-
+    if (!noButton || !yesButton) {
         return;
-
     }
-
 
     noAttempts++;
 
-
-    /* =====================================
-       MAKE YES BIGGER
-    ===================================== */
+    /* Make YES bigger */
 
     yesScale += 0.25;
 
-
     yesButton.style.transform =
         `scale(${yesScale})`;
-
 
     yesButton.style.boxShadow =
         "0 15px 40px rgba(217, 4, 41, 0.45)";
 
 
-    /* =====================================
-       CHANGE MESSAGE
-    ===================================== */
+    /* Change message */
 
     const messages = [
 
@@ -298,7 +238,6 @@ function runAway() {
 
     ];
 
-
     if (dateHint) {
 
         dateHint.textContent =
@@ -308,36 +247,28 @@ function runAway() {
                     messages.length - 1
                 )
             ];
-
     }
 
 
-    /* =====================================
-       MOVE NO BUTTON
-    ===================================== */
+    /* Move NO button */
 
     const buttonWidth =
         noButton.offsetWidth;
 
-
     const buttonHeight =
         noButton.offsetHeight;
 
-
     const padding = 20;
-
 
     const maxX =
         window.innerWidth -
         buttonWidth -
         padding;
 
-
     const maxY =
         window.innerHeight -
         buttonHeight -
         padding;
-
 
     const randomX =
         Math.max(
@@ -345,29 +276,22 @@ function runAway() {
             Math.random() * maxX
         );
 
-
     const randomY =
         Math.max(
             padding,
             Math.random() * maxY
         );
 
-
-    noButton.style.position =
-        "fixed";
-
+    noButton.style.position = "fixed";
 
     noButton.style.left =
         randomX + "px";
-
 
     noButton.style.top =
         randomY + "px";
 
 
-    /* =====================================
-       MAKE NO SMALLER
-    ===================================== */
+    /* Make NO smaller */
 
     noButton.style.transform =
         `scale(${Math.max(
@@ -376,9 +300,7 @@ function runAway() {
         )})`;
 
 
-    /* =====================================
-       FINAL MESSAGE
-    ===================================== */
+    /* Final message */
 
     if (
         yesScale >= 2.5 &&
@@ -387,9 +309,7 @@ function runAway() {
 
         dateHint.textContent =
             "Okay okay... just click YES already 😭❤️";
-
     }
-
 }
 
 
@@ -399,19 +319,13 @@ function runAway() {
 
 function sayYes() {
 
-    /* Heart explosion */
-
     heartExplosion();
-
-
-    /* Small delay */
 
     setTimeout(() => {
 
         goToPage3();
 
     }, 700);
-
 }
 
 
@@ -422,11 +336,8 @@ function sayYes() {
 function heartExplosion() {
 
     if (!heartContainer) {
-
         return;
-
     }
-
 
     for (
         let i = 0;
@@ -435,13 +346,10 @@ function heartExplosion() {
     ) {
 
         setTimeout(() => {
-
             createHeart();
-
         }, i * 25);
 
     }
-
 }
 
 
@@ -456,175 +364,7 @@ if (
 ) {
 
     setTimeout(() => {
-
         heartExplosion();
-
     }, 400);
-
-}
-
-
-/* =========================================
-   DATE PICKER
-========================================= */
-
-const datePicker =
-    document.getElementById(
-        "datePicker"
-    );
-
-
-const selectedDate =
-    document.getElementById(
-        "selectedDate"
-    );
-
-
-/* =========================================
-   SET MINIMUM DATE
-========================================= */
-
-if (datePicker) {
-
-    const today =
-        new Date();
-
-
-    const year =
-        today.getFullYear();
-
-
-    const month =
-        String(
-            today.getMonth() + 1
-        ).padStart(
-            2,
-            "0"
-        );
-
-
-    const day =
-        String(
-            today.getDate()
-        ).padStart(
-            2,
-            "0"
-        );
-
-
-    const todayString =
-        `${year}-${month}-${day}`;
-
-
-    datePicker.min =
-        todayString;
-
-}
-
-
-/* =========================================
-   CHOOSE DATE
-========================================= */
-
-function chooseDate() {
-
-    if (
-        !datePicker ||
-        !selectedDate
-    ) {
-
-        return;
-
-    }
-
-
-    const selected =
-        datePicker.value;
-
-
-    /* =====================================
-       CHECK IF DATE WAS SELECTED
-    ===================================== */
-
-    if (!selected) {
-
-        selectedDate.textContent =
-            "Choose a date first, silly 🥺❤️";
-
-        selectedDate.style.animation =
-            "none";
-
-
-        setTimeout(() => {
-
-            selectedDate.style.animation =
-                "dateMessageAppear 0.6s ease";
-
-        }, 10);
-
-
-        return;
-
-    }
-
-
-    /* =====================================
-       CONVERT DATE
-    ===================================== */
-
-    const date =
-        new Date(
-            selected + "T00:00:00"
-        );
-
-
-    const options = {
-
-        weekday: "long",
-
-        year: "numeric",
-
-        month: "long",
-
-        day: "numeric"
-
-    };
-
-
-    const formattedDate =
-        date.toLocaleDateString(
-            "en-IN",
-            options
-        );
-
-
-    /* =====================================
-       SHOW CUTE MESSAGE
-    ===================================== */
-
-    selectedDate.innerHTML =
-        `It's a date! 🥰❤️<br>
-         <span style="font-size: 18px;">
-         ${formattedDate}
-         </span>`;
-
-
-    selectedDate.style.animation =
-        "none";
-
-
-    setTimeout(() => {
-
-        selectedDate.style.animation =
-            "dateMessageAppear 0.6s ease";
-
-    }, 10);
-
-
-    /* =====================================
-       EXTRA HEARTS
-    ===================================== */
-
-    heartExplosion();
 
 }
