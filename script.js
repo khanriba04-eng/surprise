@@ -3,23 +3,17 @@
 ========================================= */
 
 function goToPage2() {
-
     window.location.href = "page2.html";
-
 }
 
 
 function goToPage3() {
-
     window.location.href = "page3.html";
-
 }
 
 
 function restart() {
-
     window.location.href = "index.html";
-
 }
 
 
@@ -27,12 +21,9 @@ function restart() {
    FLOATING HEARTS
 ========================================= */
 
-const heartContainer =
-    document.querySelector(".hearts");
-
+const heartContainer = document.querySelector(".hearts");
 
 const heartSymbols = [
-
     "❤️",
     "💕",
     "💗",
@@ -42,71 +33,51 @@ const heartSymbols = [
     "💝",
     "♡",
     "♥"
-
 ];
 
 
 function createHeart() {
 
     if (!heartContainer) {
-
         return;
-
     }
 
-
-    const heart =
-        document.createElement("div");
-
+    const heart = document.createElement("div");
 
     heart.classList.add("heart");
-
 
     const randomHeart =
         heartSymbols[
             Math.floor(
-                Math.random() *
-                heartSymbols.length
+                Math.random() * heartSymbols.length
             )
         ];
 
-
     heart.innerHTML = randomHeart;
-
 
     heart.style.left =
         Math.random() * 100 + "vw";
 
-
     const size =
         Math.random() * 25 + 15;
-
 
     heart.style.fontSize =
         size + "px";
 
-
     const duration =
         Math.random() * 5 + 5;
-
 
     heart.style.animationDuration =
         duration + "s";
 
-
     heart.style.animationDelay =
         Math.random() * 1.5 + "s";
 
-
     heartContainer.appendChild(heart);
 
-
     setTimeout(() => {
-
         heart.remove();
-
     }, (duration + 2) * 1000);
-
 }
 
 
@@ -114,10 +85,7 @@ function createHeart() {
    START FLOATING HEARTS
 ========================================= */
 
-setInterval(
-    createHeart,
-    220
-);
+setInterval(createHeart, 220);
 
 
 /* =========================================
@@ -127,14 +95,11 @@ setInterval(
 const yesButton =
     document.getElementById("yesButton");
 
-
 const noButton =
     document.getElementById("noButton");
 
-
 const dateHint =
     document.getElementById("dateHint");
-
 
 let yesScale = 1;
 
@@ -148,29 +113,28 @@ let noAttempts = 0;
 function runAway() {
 
     if (!noButton || !yesButton) {
-
         return;
-
     }
-
 
     noAttempts++;
 
 
-    /* Make YES bigger */
+    /* =====================================
+       MAKE YES BIGGER
+    ===================================== */
 
     yesScale += 0.25;
 
-
     yesButton.style.transform =
         `scale(${yesScale})`;
-
 
     yesButton.style.boxShadow =
         "0 15px 40px rgba(217, 4, 41, 0.45)";
 
 
-    /* Change messages */
+    /* =====================================
+       CHANGE MESSAGE
+    ===================================== */
 
     const messages = [
 
@@ -189,41 +153,57 @@ function runAway() {
     ];
 
 
-    dateHint.textContent =
-        messages[
-            Math.min(
-                noAttempts - 1,
-                messages.length - 1
-            )
-        ];
+    if (dateHint) {
+
+        dateHint.textContent =
+            messages[
+                Math.min(
+                    noAttempts - 1,
+                    messages.length - 1
+                )
+            ];
+
+    }
 
 
-    /* Move NO button */
+    /* =====================================
+       MOVE NO BUTTON
+    ===================================== */
+
+    const buttonWidth =
+        noButton.offsetWidth;
+
+    const buttonHeight =
+        noButton.offsetHeight;
+
+
+    const padding = 20;
+
 
     const maxX =
-        Math.max(
-            100,
-            window.innerWidth / 2 - 100
-        );
+        window.innerWidth -
+        buttonWidth -
+        padding;
 
 
     const maxY =
-        Math.max(
-            100,
-            window.innerHeight / 2 - 100
-        );
+        window.innerHeight -
+        buttonHeight -
+        padding;
 
 
     const randomX =
-        Math.random() *
-        maxX * 2 -
-        maxX;
+        Math.max(
+            padding,
+            Math.random() * maxX
+        );
 
 
     const randomY =
-        Math.random() *
-        maxY * 2 -
-        maxY;
+        Math.max(
+            padding,
+            Math.random() * maxY
+        );
 
 
     noButton.style.position =
@@ -231,14 +211,16 @@ function runAway() {
 
 
     noButton.style.left =
-        `calc(50% + ${randomX}px)`;
+        randomX + "px";
 
 
     noButton.style.top =
-        `calc(50% + ${randomY}px)`;
+        randomY + "px";
 
 
-    /* Make NO slightly smaller */
+    /* =====================================
+       MAKE NO SMALLER
+    ===================================== */
 
     noButton.style.transform =
         `scale(${Math.max(
@@ -247,9 +229,11 @@ function runAway() {
         )})`;
 
 
-    /* If YES gets huge... */
+    /* =====================================
+       FINAL MESSAGE
+    ===================================== */
 
-    if (yesScale >= 2.5) {
+    if (yesScale >= 2.5 && dateHint) {
 
         dateHint.textContent =
             "Okay okay... just click YES already 😭❤️";
@@ -265,12 +249,12 @@ function runAway() {
 
 function sayYes() {
 
-    /* Heart explosion */
+    /* Create heart explosion */
 
     heartExplosion();
 
 
-    /* Small delay for dramatic effect */
+    /* Wait for the hearts */
 
     setTimeout(() => {
 
@@ -288,9 +272,7 @@ function sayYes() {
 function heartExplosion() {
 
     if (!heartContainer) {
-
         return;
-
     }
 
 
