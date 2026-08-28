@@ -14,6 +14,7 @@
 ========================================= */
 
 body {
+
     min-height: 100vh;
 
     background:
@@ -29,7 +30,9 @@ body {
     font-family: "Poppins", sans-serif;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     overflow: hidden;
@@ -39,24 +42,28 @@ body {
 
 
 /* =========================================
-   SOFT BACKGROUND GLOW
+   BACKGROUND GLOW
 ========================================= */
 
 body::before {
+
     content: "";
 
     position: absolute;
 
     width: 450px;
+
     height: 450px;
 
     border-radius: 50%;
 
-    background: rgba(255, 0, 60, 0.08);
+    background:
+        rgba(255, 0, 60, 0.08);
 
     filter: blur(80px);
 
-    animation: softGlow 5s ease-in-out infinite;
+    animation:
+        softGlow 5s ease-in-out infinite;
 
     pointer-events: none;
 }
@@ -65,17 +72,23 @@ body::before {
 @keyframes softGlow {
 
     0% {
+
         transform: scale(0.8);
+
         opacity: 0.5;
     }
 
     50% {
+
         transform: scale(1.2);
+
         opacity: 1;
     }
 
     100% {
+
         transform: scale(0.8);
+
         opacity: 0.5;
     }
 }
@@ -86,6 +99,7 @@ body::before {
 ========================================= */
 
 .container {
+
     text-align: center;
 
     z-index: 10;
@@ -96,7 +110,8 @@ body::before {
 
     max-width: 750px;
 
-    animation: pageAppear 1.2s ease;
+    animation:
+        pageAppear 1.2s ease;
 }
 
 
@@ -106,9 +121,12 @@ body::before {
 
 .container h1 {
 
-    font-family: "Dancing Script", cursive;
+    font-family:
+        "Dancing Script",
+        cursive;
 
-    font-size: clamp(55px, 8vw, 90px);
+    font-size:
+        clamp(55px, 8vw, 90px);
 
     font-weight: 700;
 
@@ -119,7 +137,8 @@ body::before {
     margin-bottom: 20px;
 
     text-shadow:
-        0 5px 20px rgba(217, 4, 41, 0.15);
+        0 5px 20px
+        rgba(217, 4, 41, 0.15);
 }
 
 
@@ -178,7 +197,9 @@ button {
 
     border-radius: 50px;
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 
     font-size: 16px;
 
@@ -187,7 +208,8 @@ button {
     cursor: pointer;
 
     box-shadow:
-        0 10px 25px rgba(217, 4, 41, 0.28);
+        0 10px 25px
+        rgba(217, 4, 41, 0.28);
 
     transition:
         transform 0.3s ease,
@@ -198,7 +220,9 @@ button {
 
 button:hover {
 
-    transform: scale(1.08) translateY(-3px);
+    transform:
+        scale(1.08)
+        translateY(-3px);
 
     background:
         linear-gradient(
@@ -208,7 +232,8 @@ button:hover {
         );
 
     box-shadow:
-        0 15px 35px rgba(217, 4, 41, 0.35);
+        0 15px 35px
+        rgba(217, 4, 41, 0.35);
 }
 
 
@@ -241,7 +266,9 @@ button:active {
 
     border-radius: 50px;
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 
     font-size: 16px;
 
@@ -250,12 +277,12 @@ button:active {
     cursor: pointer;
 
     box-shadow:
-        0 10px 25px rgba(217, 4, 41, 0.28);
+        0 10px 25px
+        rgba(217, 4, 41, 0.28);
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        box-shadow 0.3s ease;
 }
 
 
@@ -265,26 +292,14 @@ button:active {
         scale(1.08)
         translateY(-3px);
 
-    background:
-        linear-gradient(
-            135deg,
-            #ef233c,
-            #d90429
-        );
-
     box-shadow:
-        0 15px 35px rgba(217, 4, 41, 0.4);
-}
-
-
-.main-button:active {
-
-    transform: scale(0.95);
+        0 15px 35px
+        rgba(217, 4, 41, 0.4);
 }
 
 
 /* =========================================
-   BUTTON HINT
+   HINT
 ========================================= */
 
 .hint {
@@ -390,23 +405,16 @@ button:active {
 
 .date-message {
 
-    font-family:
-        "Poppins",
-        sans-serif;
+    font-size: 16px !important;
 
-    font-size:
-        16px !important;
+    color: #765b60 !important;
 
-    color:
-        #765b60 !important;
-
-    margin-bottom:
-        35px !important;
+    margin-bottom: 35px !important;
 }
 
 
 /* =========================================
-   YES / NO AREA
+   DATE BUTTONS
 ========================================= */
 
 .date-buttons {
@@ -431,21 +439,20 @@ button:active {
    YES BUTTON
 ========================================= */
 
-/* =========================================
-   YES BUTTON
-========================================= */
-
 .yes-button {
+
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
-    background: linear-gradient(
-        135deg,
-        #d90429,
-        #b00020
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #d90429,
+            #b00020
+        );
 
     color: white;
 
@@ -457,7 +464,9 @@ button:active {
 
     border-radius: 50px;
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 
     font-size: 16px;
 
@@ -466,12 +475,12 @@ button:active {
     cursor: pointer;
 
     box-shadow:
-        0 10px 25px rgba(217, 4, 41, 0.28);
+        0 10px 25px
+        rgba(217, 4, 41, 0.28);
 
     transition:
         transform 0.4s ease,
-        box-shadow 0.4s ease,
-        background 0.3s ease;
+        box-shadow 0.4s ease;
 
     position: relative;
 
@@ -479,29 +488,13 @@ button:active {
 }
 
 
-/* YES hover */
-
 .yes-button:hover {
-
-    background: linear-gradient(
-        135deg,
-        #ef233c,
-        #d90429
-    );
 
     transform: scale(1.08);
 
     box-shadow:
         0 15px 40px
         rgba(217, 4, 41, 0.45);
-}
-
-
-/* YES click */
-
-.yes-button:active {
-
-    transform: scale(0.95);
 }
 
 
@@ -515,7 +508,8 @@ button:active {
 
     color: #b00020;
 
-    border: 2px solid #d90429;
+    border:
+        2px solid #d90429;
 
     box-shadow:
         0 5px 15px
@@ -524,24 +518,11 @@ button:active {
     position: relative;
 
     z-index: 10;
-
-    transition:
-        left 0.25s ease,
-        top 0.25s ease,
-        transform 0.3s ease;
-}
-
-
-.no-button:hover {
-
-    background: #fff;
-
-    color: #d90429;
 }
 
 
 /* =========================================
-   DATE MESSAGE
+   DATE HINT
 ========================================= */
 
 .date-hint {
@@ -581,51 +562,13 @@ button:active {
     position: relative;
 
     overflow: hidden;
+
+    padding: 20px;
 }
 
 
 /* =========================================
-   FINAL GLOW
-========================================= */
-
-.final-page::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 700px;
-
-    height: 700px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 0, 50, 0.10);
-
-    filter: blur(100px);
-
-    animation:
-        finalGlow 4s infinite alternate;
-}
-
-
-@keyframes finalGlow {
-
-    from {
-
-        transform: scale(0.8);
-    }
-
-    to {
-
-        transform: scale(1.2);
-    }
-}
-
-
-/* =========================================
-   FINAL CONTENT
+   FINAL CONTAINER
 ========================================= */
 
 .final-container {
@@ -634,12 +577,26 @@ button:active {
 
     z-index: 10;
 
-    width: 90%;
+    width: 95%;
 
-    max-width: 900px;
+    max-width: 800px;
+
+    max-height: 95vh;
+
+    overflow-y: auto;
+
+    padding: 20px;
 
     animation:
         finalAppear 1.5s ease;
+
+    scrollbar-width: none;
+}
+
+
+.final-container::-webkit-scrollbar {
+
+    display: none;
 }
 
 
@@ -666,13 +623,13 @@ button:active {
 
 
 /* =========================================
-   GIANT HEART
+   BIG HEART
 ========================================= */
 
 .big-heart {
 
     font-size:
-        clamp(100px, 16vw, 190px);
+        clamp(75px, 12vw, 140px);
 
     display: inline-block;
 
@@ -685,7 +642,7 @@ button:active {
             rgba(176, 0, 32, 0.25)
         );
 
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 
@@ -725,44 +682,38 @@ button:active {
         cursive;
 
     font-size:
-        clamp(55px, 9vw, 110px);
+        clamp(50px, 8vw, 85px);
 
-    line-height:
-        0.9;
+    line-height: 0.95;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    color:
-        #b00020;
+    color: #b00020;
 
     text-shadow:
         0 8px 25px
         rgba(176, 0, 32, 0.20);
 
-    margin-bottom:
-        25px;
+    margin-bottom: 15px;
 }
 
 
 /* =========================================
-   FINAL PARAGRAPH
+   FINAL MESSAGE
 ========================================= */
 
-.final-container p {
+.final-message {
 
     font-family:
         "Dancing Script",
         cursive;
 
-    margin-top:
-        15px;
-
     font-size:
-        28px;
+        clamp(20px, 3vw, 28px);
 
-    color:
-        #704f55;
+    color: #704f55;
+
+    margin-bottom: 10px;
 }
 
 
@@ -772,17 +723,238 @@ button:active {
 
 .heart-line {
 
-    color:
-        #d90429;
+    color: #d90429;
 
-    font-size:
-        18px;
+    font-size: 18px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
+
+    margin: 10px 0 15px;
+}
+
+
+/* =========================================
+   DATE CARD
+========================================= */
+
+.date-card {
+
+    width: min(100%, 550px);
 
     margin:
-        20px 0;
+        15px auto 0;
+
+    padding:
+        22px 25px;
+
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    border:
+        1px solid
+        rgba(217, 4, 41, 0.15);
+
+    border-radius:
+        25px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(217, 4, 41, 0.12);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================================
+   DATE CARD HEART
+========================================= */
+
+.calendar-heart {
+
+    font-size: 35px;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   DATE CARD HEADING
+========================================= */
+
+.date-card h2 {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    color: #b00020;
+
+    font-size:
+        clamp(25px, 4vw, 34px);
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   DATE SUBTITLE
+========================================= */
+
+.date-subtitle {
+
+    color: #765b60;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   DATE PICKER
+========================================= */
+
+.date-picker-wrapper {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+.date-picker-wrapper label {
+
+    font-size: 13px;
+
+    color: #684f54;
+
+    font-weight: 500;
+}
+
+
+#datePicker {
+
+    width: min(100%, 280px);
+
+    padding:
+        13px 16px;
+
+    border:
+        2px solid #f3b4be;
+
+    border-radius:
+        15px;
+
+    background:
+        white;
+
+    color:
+        #6b2737;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size:
+        15px;
+
+    outline:
+        none;
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#datePicker:focus {
+
+    border-color:
+        #d90429;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(217, 4, 41, 0.10);
+}
+
+
+/* =========================================
+   DATE CONFIRM BUTTON
+========================================= */
+
+.date-button {
+
+    padding:
+        13px 25px;
+
+    font-size:
+        14px;
+
+    margin-top:
+        3px;
+}
+
+
+/* =========================================
+   SELECTED DATE
+========================================= */
+
+.selected-date {
+
+    min-height:
+        25px;
+
+    margin-top:
+        15px;
+
+    margin-bottom:
+        0 !important;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        23px !important;
+
+    font-weight:
+        600;
+
+    color:
+        #b00020 !important;
+
+    animation:
+        dateMessageAppear 0.6s ease;
+}
+
+
+@keyframes dateMessageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.8);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
 }
 
 
@@ -793,13 +965,13 @@ button:active {
 .mini-hearts {
 
     font-size:
-        25px;
+        22px;
 
     letter-spacing:
-        5px;
+        4px;
 
     margin-top:
-        20px;
+        15px;
 
     animation:
         miniFloat 2s ease-in-out infinite;
@@ -818,44 +990,8 @@ button:active {
     50% {
 
         transform:
-            translateY(-8px);
+            translateY(-7px);
     }
-}
-
-
-/* =========================================
-   REPLAY BUTTON
-========================================= */
-
-.replay-button {
-
-    margin-top:
-        25px;
-
-    padding:
-        11px 25px;
-
-    background:
-        transparent;
-
-    border:
-        1px solid #d90429;
-
-    color:
-        #b00020;
-
-    font-size:
-        13px;
-}
-
-
-.replay-button:hover {
-
-    background:
-        #d90429;
-
-    color:
-        white;
 }
 
 
@@ -891,24 +1027,21 @@ button:active {
 
 @media (max-width: 600px) {
 
+    body {
+
+        overflow: hidden;
+    }
+
+
     .container {
 
-        padding:
-            20px;
+        padding: 20px;
     }
 
 
     .container h1 {
 
-        font-size:
-            55px;
-    }
-
-
-    .container p {
-
-        font-size:
-            15px;
+        font-size: 55px;
     }
 
 
@@ -921,8 +1054,7 @@ button:active {
 
     .date-buttons {
 
-        gap:
-            12px;
+        gap: 12px;
     }
 
 
@@ -956,24 +1088,76 @@ button:active {
     }
 
 
+    .final-container {
+
+        padding: 10px;
+
+        max-height: 94vh;
+    }
+
+
     .final-container h1 {
 
         font-size:
-            58px;
+            55px;
     }
 
 
-    .final-container p {
+    .final-message {
 
         font-size:
-            23px;
+            22px;
     }
 
 
-    .heart-line {
+    .date-card {
+
+        padding:
+            18px 15px;
+
+        border-radius:
+            20px;
+    }
+
+
+    .date-card h2 {
+
+        font-size:
+            27px;
+    }
+
+
+    .date-subtitle {
+
+        font-size:
+            12px;
+    }
+
+
+    .date-button {
+
+        padding:
+            12px 20px;
 
         font-size:
             13px;
+    }
+
+
+    .selected-date {
+
+        font-size:
+            20px !important;
+    }
+
+
+    .mini-hearts {
+
+        font-size:
+            17px;
+
+        letter-spacing:
+            2px;
     }
 
 }
