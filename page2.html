@@ -1,26 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do You Really Want To Know? ❤️</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Little Question ❤️</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
     <div class="hearts"></div>
 
-    <div class="container">
-        <h1>Do you really want to know? 👀❤️</h1>
-        <p>I hope you're ready for this...</p>
 
-        <div class="buttons">
-            <button onclick="goToFinalPage()">Yes ❤️</button>
-            <button onclick="goToFinalPage()">Yes 💕</button>
+    <main class="container">
+
+        <div class="date-heart">
+            💗
         </div>
-    </div>
+
+
+        <p class="tiny-text">
+            I have one little question...
+        </p>
+
+
+        <h1 class="date-question">
+
+            Would you like
+            <br>
+            to go on a date with me?
+
+        </h1>
+
+
+        <p class="date-message">
+
+            Just you, me and a little bit of magic... ✨
+
+        </p>
+
+
+        <div class="date-buttons">
+
+            <button
+                class="yes-button"
+                id="yesButton"
+                onclick="sayYes()"
+            >
+
+                YES ❤️
+
+            </button>
+
+
+            <button
+                class="no-button"
+                id="noButton"
+                onclick="runAway()"
+            >
+
+                NO 🙈
+
+            </button>
+
+        </div>
+
+
+        <p
+            class="date-hint"
+            id="dateHint"
+        >
+
+            Be honest... 👀❤️
+
+        </p>
+
+    </main>
+
 
     <script src="script.js"></script>
+
 </body>
+
 </html>
