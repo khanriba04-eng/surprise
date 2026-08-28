@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #d90429;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Main content */
+
+.container {
+    text-align: center;
+    z-index: 10;
+    padding: 30px;
+}
+
+.container h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.container p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    color: #555;
+}
+
+/* Buttons */
+
+button {
+    background: #d90429;
+    color: white;
+    border: none;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(217, 4, 41, 0.3);
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #ef233c;
+    box-shadow: 0 10px 25px rgba(217, 4, 41, 0.4);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Floating hearts */
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    color: #d90429;
+    font-size: 25px;
+    animation: floatUp linear forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Final page */
+
+.final-page {
+    background: #fff;
+}
+
+.final-container {
+    text-align: center;
+    z-index: 10;
+    animation: appear 1.5s ease;
+}
+
+.final-container h1 {
+    font-size: 4rem;
+    color: #d90429;
+    text-shadow: 0 5px 20px rgba(217, 4, 41, 0.2);
+}
+
+.final-container p {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.big-heart {
+    font-size: 100px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .container h1 {
+        font-size: 2.2rem;
+    }
+
+    .final-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        padding: 14px 25px;
+        font-size: 1rem;
+    }
+}
