@@ -431,38 +431,42 @@ button:active {
    YES BUTTON
 ========================================= */
 
+/* =========================================
+   YES BUTTON
+========================================= */
+
 .yes-button {
+    display: inline-flex;
 
-    display: inline-block;
+    align-items: center;
+    justify-content: center;
 
-    text-decoration: none;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d90429,
-            #b00020
-        );
+    background: linear-gradient(
+        135deg,
+        #d90429,
+        #b00020
+    );
 
     color: white;
+
+    border: none;
+
+    outline: none;
 
     padding: 16px 35px;
 
     border-radius: 50px;
 
-    font-family:
-        "Poppins",
-        sans-serif;
+    font-family: "Poppins", sans-serif;
 
     font-size: 16px;
 
-    font-weight: 500;
+    font-weight: 600;
 
     cursor: pointer;
 
     box-shadow:
-        0 10px 25px
-        rgba(217, 4, 41, 0.28);
+        0 10px 25px rgba(217, 4, 41, 0.28);
 
     transition:
         transform 0.4s ease,
@@ -475,18 +479,29 @@ button:active {
 }
 
 
+/* YES hover */
+
 .yes-button:hover {
 
-    background:
-        linear-gradient(
-            135deg,
-            #ef233c,
-            #d90429
-        );
+    background: linear-gradient(
+        135deg,
+        #ef233c,
+        #d90429
+    );
+
+    transform: scale(1.08);
 
     box-shadow:
         0 15px 40px
         rgba(217, 4, 41, 0.45);
+}
+
+
+/* YES click */
+
+.yes-button:active {
+
+    transform: scale(0.95);
 }
 
 
